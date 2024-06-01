@@ -12,7 +12,7 @@ use Illuminate\Http\RedirectResponse;
     
 class RoleController extends Controller
 {
-        
+       
     function __construct()
     {
          $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','store']]);
@@ -20,7 +20,7 @@ class RoleController extends Controller
          $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:role-delete', ['only' => ['destroy']]);
     }
-    
+
  
     public function index(Request $request): View
     {
